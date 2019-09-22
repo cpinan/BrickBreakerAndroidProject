@@ -1,7 +1,8 @@
-package com.carlospinan.brickbreaker
+package com.carlospinan.brickbreaker.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.carlospinan.brickbreaker.R
 
 class MainActivity : AppCompatActivity() {
 
