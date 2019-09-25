@@ -1,4 +1,4 @@
-package com.carlospinan.brickbreaker.game.engine
+package com.carlospinan.brickbreaker.game.view
 
 import android.content.Context
 import android.view.SurfaceView
@@ -6,8 +6,12 @@ import android.view.SurfaceView
 /**
  * @author Carlos Piñan
  */
-abstract class SurfaceEngine(
+class BrickBreakerView(
     context: Context
 ) : SurfaceView(context) {
+
+    init {
+
+    }
 
 }

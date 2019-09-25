@@ -2,6 +2,7 @@ package com.carlospinan.brickbreaker.game.engine
 
 import android.graphics.Canvas
 import android.view.SurfaceHolder
+import android.view.SurfaceView
 
 /**
  * @author Carlos Piñan
@@ -9,7 +10,7 @@ import android.view.SurfaceHolder
 private const val FPS = 60L
 
 class ThreadEngine(
-    private val surfaceEngine: SurfaceEngine,
+    private val surfaceView: SurfaceView,
     private val surfaceHolder: SurfaceHolder
 ) : Thread() {
 
@@ -26,7 +27,12 @@ class ThreadEngine(
                     // Added -1 to prevent ArithmeticException
                     val timeElapsed = System.currentTimeMillis() - (lastTimeStamp - 1)
                     val dt: Float = 1.0f / timeElapsed
+                    // surfaceView.update(dt)
+                    surfaceView.draw(canvas)
                     lastTimeStamp = System.currentTimeMillis()
+                }
+                canvas?.let {
+                    surfaceHolder.unlockCanvasAndPost(it)
                 }
             }
             sleep(1000L / FPS)
