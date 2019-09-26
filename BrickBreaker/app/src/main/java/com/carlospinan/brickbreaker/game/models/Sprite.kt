@@ -4,21 +4,20 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Matrix
 import android.graphics.Paint
-import com.carlospinan.brickbreaker.game.GameConfig
-
+import com.carlospinan.brickbreaker.game.DEBUG_RECTANGLE
 
 /**
  * @author Carlos Piñan
  */
-abstract class Sprite(val bitmap: Bitmap) {
+abstract class Sprite(private val bitmap: Bitmap) {
 
     var x: Float = 0f
     var y: Float = 0f
-    var visible: Boolean = true
+    private var visible: Boolean = true
     val width = bitmap.width
     val height = bitmap.height
-    val anchor_x: Float = width * 0.5f
-    val anchor_y: Float = height * 0.5f
+    private val anchor_x: Float = width * 0.5f
+    private val anchor_y: Float = height * 0.5f
 
     private val matrix = Matrix()
     private val debugPaintArea = Paint()
@@ -35,7 +34,7 @@ abstract class Sprite(val bitmap: Bitmap) {
                 reset()
                 postTranslate(x - anchor_x, y - anchor_y)
                 canvas.drawBitmap(bitmap, matrix, null)
-                if (GameConfig.DEBUG_RECTANGLE) {
+                if (DEBUG_RECTANGLE) {
                     val rectangle = bounds()
                     canvas.drawRect(
                         rectangle.left,
