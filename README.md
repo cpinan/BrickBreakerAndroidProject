@@ -17,6 +17,10 @@ This is a simple demonstration using the following:
 3. Accelerometer
 4. Threading
 
+It contains:
+1. BrickBreaker folder with the android project
+2. resource folder with nothing interesting.
+
 Here you can see a preview tested on One Plus 7 Pro:
 
 ![Screenshot](https://github.com/cpinan/BrickBreakerAndroidProject/blob/master/resource/screenshot?raw=true)
