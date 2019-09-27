@@ -14,11 +14,10 @@ object SoundEngine {
 
     fun preloadSFX(context: Context, resource: String) {
         if (resource.isNotEmpty()) {
-            var soundId: Int
             val soundPool = SoundPool(10, AudioManager.STREAM_MUSIC, 0)
             val assetManager = context.assets
             val descriptor = assetManager.openFd(resource)
-            soundId = soundPool.load(descriptor, 1)
+            val soundId = soundPool.load(descriptor, 1)
             if (soundId != -1) {
                 if (soundsHashMap[resource] == null) {
                     val hashMap = HashMap<Int, SoundPool>()
@@ -43,18 +42,18 @@ object SoundEngine {
     }
 
     fun pause() {
-        for (soundEntry in soundsHashMap?.entries) {
+        for (soundEntry in soundsHashMap.entries) {
             val hash = soundEntry.value
-            for (soundPoolEntry in hash?.entries) {
+            for (soundPoolEntry in hash.entries) {
                 soundPoolEntry.value.stop(soundPoolEntry.key)
             }
         }
     }
 
     fun releaseSounds() {
-        for (soundEntry in soundsHashMap?.entries) {
+        for (soundEntry in soundsHashMap.entries) {
             val hash = soundEntry.value
-            for (soundPoolEntry in hash?.entries) {
+            for (soundPoolEntry in hash.entries) {
                 soundPoolEntry.value.release()
             }
         }

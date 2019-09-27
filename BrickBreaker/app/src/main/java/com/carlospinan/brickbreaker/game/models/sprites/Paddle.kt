@@ -9,7 +9,7 @@ import kotlin.math.min
 /**
  * @author Carlos Piñan
  */
-private const val SPEED = 3.0f
+private const val SPEED = 25.0f
 
 class Paddle(bitmap: Bitmap) : Sprite(bitmap) {
 

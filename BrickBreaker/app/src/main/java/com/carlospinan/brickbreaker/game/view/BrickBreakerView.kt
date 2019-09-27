@@ -32,8 +32,8 @@ class BrickBreakerView(
         canvas?.let {
             it.save()
             it.drawColor(0xFF000000.toInt())
-            val scaleX = canvas.width / SCREEN_WIDTH
-            val scaleY = canvas.height / SCREEN_HEIGHT
+            val scaleX = it.width / SCREEN_WIDTH
+            val scaleY = it.height / SCREEN_HEIGHT
             it.scale(scaleX, scaleY)
             game.draw(it)
             it.restore()

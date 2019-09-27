@@ -12,7 +12,7 @@ class Rectangle(
 
     companion object {
         fun make(left: Float, top: Float, right: Float, bottom: Float): Rectangle {
-            return make(left, top, right, bottom)
+            return Rectangle(left, top, right, bottom)
         }
     }
 
