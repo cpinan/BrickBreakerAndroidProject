@@ -12,8 +12,10 @@ Searching for game engines or frameworks:
 
 This is a simple demonstration using the following:
 
-1. SurfaceView
+1. SurfaceView (Canvas)
 2. Old SoundPool that is deprecated (it's going to be updated, please check the TODO at the end of this readme)
+3. Accelerometer
+4. Threading
 
 Here you can see a preview tested on One Plus 7 Pro:
 
